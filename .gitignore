@@ -1,1 +1,7 @@
+# ide相关文件
 .idea/
+/CSharpStudy.sln.DotSettings.user
+
+# 编译输出
+bin/
+obj/
