@@ -1,6 +1,6 @@
 using Xunit.Abstractions;
 
-namespace 入门;
+namespace 基础;
 
 /// <summary>
 /// 字符串
