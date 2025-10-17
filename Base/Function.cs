@@ -59,7 +59,7 @@ public class Function : MyBasePrintClass
     /// params 变长参数 只能有一个
     /// </summary>
     [Fact(DisplayName = "params 变长参数")]
-    public void Test()
+    public void Test3()
     {
         ParamsMethod("HeroP", 2, 4, "abc", "123", "qwe");
     }
@@ -72,5 +72,23 @@ public class Function : MyBasePrintClass
         {
             output.WriteLine($"str{i}: {strs[i]}");
         }
+    }
+
+
+    /// <summary>
+    /// 默认值参数 可以有多个
+    /// 若参数混用，那么默认值参数一定在普通参数后面
+    /// 如果有变长参数，那么变长参数在最后
+    /// </summary>
+    [Fact(DisplayName = "默认值参数")]
+    public void Test4()
+    {
+        Method4("HeroP");
+    }
+
+    //如果默认值参数和普通参数混用，那么“默认值参数一定要在普通参数后面”(如果有变长参数，那么变长参数在最后)
+    private void Method4(string name, string str = "沉默是金")
+    {
+        output.WriteLine(name + str);
     }
 }
