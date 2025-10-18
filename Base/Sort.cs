@@ -73,7 +73,7 @@ public class Sort : MyBasePrintClass
     //选择排序
     public void SelectionSort(int[] arr)
     {
-        //临时变量，用于冒泡交换
+        //临时变量，用于交换
         int tmp;
         for (int i = 0; i < arr.Length; i++)
         {
