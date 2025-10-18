@@ -27,6 +27,21 @@ public class Sort : MyBasePrintClass
         PrintArr(arr);
     }
 
+    /// <summary>
+    /// 选择排序
+    /// </summary>
+    [Fact(DisplayName = "选择排序")]
+    public void Test2()
+    {
+        int[] arr = GenerateArr(5);
+
+        output.WriteLine("Sort 前: ");
+        PrintArr(arr);
+        output.WriteLine("Sort 后: ");
+        SelectionSort(arr);
+        PrintArr(arr);
+    }
+
     //冒泡函数方法体
     public void BubbleSort(int[] arr)
     {
@@ -52,6 +67,31 @@ public class Sort : MyBasePrintClass
             //如果未进行排序，则提前结束循环
             if (!isSort)
                 break;
+        }
+    }
+
+    //选择排序
+    public void SelectionSort(int[] arr)
+    {
+        //临时变量，用于冒泡交换
+        int tmp;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            int maxIndex = 0;
+            for (int j = 0; j < arr.Length - 1 - i; j++)
+            {
+                if (arr[maxIndex] < arr[j + 1])
+                {
+                    maxIndex = j + 1;
+                }
+            }
+
+            if (maxIndex != arr.Length - 1 - i)
+            {
+                tmp = arr[maxIndex];
+                arr[maxIndex] = arr[arr.Length - 1 - i];
+                arr[arr.Length - 1 - i] = tmp;
+            }
         }
     }
 
