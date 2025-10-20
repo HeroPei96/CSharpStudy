@@ -23,6 +23,17 @@ public class Class : MyBasePrintClass
         // p.Name = "ABC";
         // output.WriteLine(p.Name);
     }
+
+    /// <summary>
+    /// 常用于数组对象，也可用于选择器，例如get中自定义switch选择
+    /// </summary>
+    [Fact(DisplayName = "索引器")]
+    public void Test2()
+    {
+        Person p = new Person(18, "HeroP");
+        p[0] = new Person(10, "ABC");
+        output.WriteLine(p[0].Name);
+    }
 }
 
 public class Person
@@ -50,6 +61,16 @@ public class Person
             //value 只能用于 set 属性，表示外部传入的值
             name = value;
         }
+    }
+
+    private Person[] friends = new Person[5];
+
+    //索引器
+    //此处可以有多个参数，可以重载，例如 this[int param1, int param2]（二维数组）
+    public Person this[int index]
+    {
+        get { return friends[index]; }
+        set { friends[index] = value; }
     }
 
     public Person(int age)
