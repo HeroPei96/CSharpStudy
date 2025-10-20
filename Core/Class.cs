@@ -34,6 +34,20 @@ public class Class : MyBasePrintClass
         p[0] = new Person(10, "ABC");
         output.WriteLine(p[0].Name);
     }
+
+    /// <summary>
+    /// 拓展方法
+    /// </summary>
+    [Fact(DisplayName = "拓展方法")]
+    public void Test3()
+    {
+        Person p = new Person(18, "HeroP");
+        p.Name = "ABC";
+        output.WriteLine(p.SpeakValue());
+
+        string str = "Test";
+        output.WriteLine(str.SpeakValue("QWE"));
+    }
 }
 
 public class Person
@@ -56,7 +70,8 @@ public class Person
 
         //正常写法
         //内部属性方法可以单独定义访问修饰符（不能两个都单独定义访问修饰符，外部属性上定义的一定要生效），默认同属性一致，若单独定义，那权限一定要小于属性上定义的
-        private set
+        // private set
+        set
         {
             //value 只能用于 set 属性，表示外部传入的值
             name = value;
@@ -89,5 +104,27 @@ public class Person
     ~Person()
     {
         Console.WriteLine("内存被回收，自动触发该析构函数");
+    }
+}
+
+/// <summary>
+/// 拓展方法
+/// 为现有的 “非静态类” 添加新方法
+/// 拓展方法一定要写在新的自定义 “静态类” 中
+/// 新的拓展方法一定是一个 “静态函数”
+/// “第一个参数”为拓展目标，并用 “this” 修饰
+/// </summary>
+static class PersonTools
+{
+    //为 Person 拓展的一个方法
+    public static string SpeakValue(this Person value)
+    {
+        return value.Name + "拓展的方法";
+    }
+
+    //为 string 拓展的一个方法
+    public static string SpeakValue(this string value, string param)
+    {
+        return "打印：" + value + "，" + param;
     }
 }
