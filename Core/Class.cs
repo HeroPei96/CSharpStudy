@@ -48,6 +48,16 @@ public class Class : MyBasePrintClass
         string str = "Test";
         output.WriteLine(str.SpeakValue("QWE"));
     }
+
+    [Fact(DisplayName = "分布类")]
+    public void Test4()
+    {
+        Student student = new Student();
+        student.sex = false;
+        student.name = "HeroP";
+        student.number = 1;
+        student.Speak("哈哈哈");
+    }
 }
 
 public class Person
@@ -126,5 +136,26 @@ static class PersonTools
     public static string SpeakValue(this string value, string param)
     {
         return "打印：" + value + "，" + param;
+    }
+}
+
+/// <summary>
+/// 分布类 关键字 partial
+/// 分部类可以写在多个脚本文件中
+/// 分部类的访问修饰符要一致
+/// 分部类中不能有重复成员
+/// </summary>
+partial class Student
+{
+    public bool sex;
+    public string name;
+}
+
+partial class Student
+{
+    public int number;
+
+    public void Speak(string str)
+    {
     }
 }
