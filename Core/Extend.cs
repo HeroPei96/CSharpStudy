@@ -28,7 +28,7 @@ public class Extend : MyBasePrintClass
 
     /// <summary>
     /// as 的使用
-    /// as: 将一个对象转换为指定类对象，成功则返回 true，失败返回 null
+    /// as: 将一个对象转换为指定类对象，成功则返回执行类对象，失败返回 null
     /// </summary>
     [Fact(DisplayName = "as 的使用")]
     public void Test2()
