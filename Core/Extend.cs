@@ -44,7 +44,10 @@ class GameObject
 {
 }
 
-class Player : GameObject
+/// <summary>
+/// sealed 密封类，让类无法再被继承
+/// </summary>
+sealed class Player : GameObject
 {
     //默认通过 base 调用父类午无参构造函数
     //可以通过 base传参 调用父类重载的构造函数
