@@ -38,10 +38,41 @@ public class Extend : MyBasePrintClass
         Monster? player2 = obj1 as Monster;
         output.WriteLine("");
     }
+
+    /// <summary>
+    /// C#中多态需要通过 virtual 实现
+    /// </summary>
+    [Fact(DisplayName = "多态 - virtual")]
+    public void Test3()
+    {
+        GameObject obj1 = new Player();
+        GameObject obj2 = new Monster();
+        //与 java 不同，多态不能直接使用，还会调用父类的方法
+        output.WriteLine(obj1.GetName());
+        output.WriteLine(obj2.GetName());
+        output.WriteLine("*****");
+        //通过 virtual - override 关键字实现多态的使用
+        output.WriteLine(obj1.GetNameV());
+        output.WriteLine(obj2.GetNameV());
+    }
 }
 
 class GameObject
 {
+    public string GetName()
+    {
+        return "GameObject";
+    }
+
+    /// <summary>
+    /// virtual - 父类通过该关键字定义为 “虚函数”
+    /// 子类通过 override 重写父类
+    /// </summary>
+    /// <returns></returns>
+    public virtual string GetNameV()
+    {
+        return "GameObject";
+    }
 }
 
 /// <summary>
@@ -59,6 +90,16 @@ sealed class Player : GameObject
     {
         Console.WriteLine("玩家攻击");
     }
+
+    public string GetName()
+    {
+        return "Player";
+    }
+
+    public override string GetNameV()
+    {
+        return "Player";
+    }
 }
 
 class Monster : GameObject
@@ -66,5 +107,15 @@ class Monster : GameObject
     public void MonsterAtk()
     {
         Console.WriteLine("怪物攻击");
+    }
+
+    public string GetName()
+    {
+        return "Monster";
+    }
+
+    public override string GetNameV()
+    {
+        return "Monster";
     }
 }
