@@ -41,6 +41,7 @@ public class Extend : MyBasePrintClass
 
     /// <summary>
     /// C#中多态需要通过 virtual 实现
+    /// 注意：如果父类和子类都有定义成员变量，那么通过多态调用时用的还是父类的变量
     /// </summary>
     [Fact(DisplayName = "多态 - virtual")]
     public void Test3()
@@ -49,7 +50,10 @@ public class Extend : MyBasePrintClass
         GameObject obj2 = new Monster();
         //与 java 不同，多态不能直接使用，还会调用父类的方法
         output.WriteLine(obj1.GetName());
-        output.WriteLine(obj2.GetName());
+        
+        //注意：如果父类和子类都有定义成员变量，那么通过多态调用时用的还是父类的变量
+        //所以要避免在多态中使用成员变量
+        output.WriteLine($"obj1.intValue: {obj1.intValue}");
         output.WriteLine("*****");
         //通过 virtual - override 关键字实现多态的使用
         output.WriteLine(obj1.GetNameV());
@@ -59,6 +63,9 @@ public class Extend : MyBasePrintClass
 
 class GameObject
 {
+
+    public int intValue = 10;
+    
     public string GetName()
     {
         return "GameObject";
@@ -80,6 +87,9 @@ class GameObject
 /// </summary>
 sealed class Player : GameObject
 {
+    
+    public int intValue = 20;
+    
     //默认通过 base 调用父类午无参构造函数
     //可以通过 base传参 调用父类重载的构造函数
     public Player() : base()
