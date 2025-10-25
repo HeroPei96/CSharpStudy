@@ -50,7 +50,7 @@ public class Extend : MyBasePrintClass
         GameObject obj2 = new Monster();
         //与 java 不同，多态不能直接使用，还会调用父类的方法
         output.WriteLine(obj1.GetName());
-        
+
         //注意：如果父类和子类都有定义成员变量，那么通过多态调用时用的还是父类的变量
         //所以要避免在多态中使用成员变量
         output.WriteLine($"obj1.intValue: {obj1.intValue}");
@@ -63,9 +63,8 @@ public class Extend : MyBasePrintClass
 
 class GameObject
 {
-
     public int intValue = 10;
-    
+
     public string GetName()
     {
         return "GameObject";
@@ -87,9 +86,8 @@ class GameObject
 /// </summary>
 sealed class Player : GameObject
 {
-    
     public int intValue = 20;
-    
+
     //默认通过 base 调用父类午无参构造函数
     //可以通过 base传参 调用父类重载的构造函数
     public Player() : base()
@@ -124,7 +122,11 @@ class Monster : GameObject
         return "Monster";
     }
 
-    public override string GetNameV()
+    /// <summary>
+    /// sealed 密封方法
+    /// 配合 override 使用，用于表示该方法无法再继续被 因继承而重写
+    /// </summary>
+    public sealed override string GetNameV()
     {
         return "Monster";
     }
