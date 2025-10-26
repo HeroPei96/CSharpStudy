@@ -19,6 +19,11 @@ public class Struct : MyBasePrintClass
     }
 }
 
+/// <summary>
+/// 结构体
+/// 结构体是 “值类型” 不是 引用类型
+/// 结构体不支持 继承 和 多态（但是可以继承接口）
+/// </summary>
 struct Student
 {
     //结构体中，成员变量不能直接初始化
