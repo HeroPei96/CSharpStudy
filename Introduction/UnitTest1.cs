@@ -1,5 +1,3 @@
-using Xunit.Abstractions;
-
 namespace 入门;
 
 public class UnitTest1 : MyBasePrintClass
