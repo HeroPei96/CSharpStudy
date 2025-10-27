@@ -11,7 +11,7 @@ public class StackT : MyBasePrintClass
     {
     }
 
-    [Fact(DisplayName = "增删改查")]
+    [Fact(DisplayName = "增取查改")]
     public void Test1()
     {
         Stack stack = new Stack();
