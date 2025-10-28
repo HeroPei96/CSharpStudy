@@ -23,7 +23,7 @@ public class Delegate : MyBasePrintClass
 
         //简化写法
         MyFun1 myFunNew = Fun1;
-        myFunNew.Invoke();
+        myFunNew();
     }
 
     [Fact(DisplayName = "有参有返回委托的定义和使用")]
