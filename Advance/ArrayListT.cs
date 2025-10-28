@@ -31,7 +31,7 @@ public class ArrayListT : MyBasePrintClass
         //移除指定的某个元素，从 索引0 开始
         list.Remove(1);
         //移除指定索引的元素
-        list.RemoveAt(2);
+        list.RemoveAt(1);
         //清空
         // list.Clear();
 
