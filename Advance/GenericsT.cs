@@ -8,6 +8,25 @@ public class GenericsT : MyBasePrintClass
     public GenericsT(ITestOutputHelper output) : base(output)
     {
     }
+
+    /// <summary>
+    /// out 协变 修饰返回值
+    /// in 逆变 修饰参数
+    /// 只能出现在 “泛型接口” 和 “泛型委托/事件” 中
+    /// </summary>
+    [Fact(DisplayName = "协变和逆变")]
+    public void Test1()
+    {
+        //协变 out 父类 装 子类
+        TestOut<Son> outSon = () => new Son();
+        TestOut<Father> outFather = outSon;
+        Father father = outFather();
+
+        //逆变 in 子类 装 父类
+        TestIn<Father> inFather = (value) => { };
+        TestIn<Son> inSon = inFather;
+        inSon(new Son());
+    }
 }
 
 /// <summary>
@@ -31,4 +50,18 @@ class TestClass<T1, T2, T3> where T1 : class where T2 : class where T3 : TestCla
     public void TestFun<T>(T value) where T : class, new()
     {
     }
+}
+
+//协变
+delegate T TestOut<out T>();
+
+//逆变
+delegate void TestIn<in T>(T value);
+
+class Father
+{
+}
+
+class Son : Father
+{
 }
