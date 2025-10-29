@@ -50,4 +50,30 @@ public class DelegateFunc : MyBasePrintClass
             return "World";
         };
     }
+
+    /// <summary>
+    /// 委托/事件中的一种特殊情景，委托中函数用了外部的变量
+    /// 之后委托执行时，这个变量的值为外部函数中的最终值（即使是值类型变量也是这种情况，相当于有了引用）
+    /// </summary>
+    [Fact(DisplayName = "闭包")]
+    public void Test3()
+    {
+        Action action = DoSomething();
+        action();
+    }
+
+    public Action DoSomething()
+    {
+        Action action = null;
+        //变量 value 和 i 形成了闭包，此时它们的生命周期发生了变化（可以理解为值类型也有了引用）
+        //当委托被执行时，这些变量的值为在当前函数下的最终值
+        int value = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            action += () => { output.WriteLine($"i: {i}, value: {value}"); };
+        }
+
+        value = 10;
+        return action;
+    }
 }
