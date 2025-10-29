@@ -65,6 +65,21 @@ public class Delegate : MyBasePrintClass
         Func<string, int, string> func = null;
     }
 
+    [Fact(DisplayName = "循环执行委托内的函数")]
+    public void Test5()
+    {
+        Func<string> func = null;
+        func += () => { return "hello"; };
+        func += () => { return "world"; };
+        func += () => { return "HeroP"; };
+
+        //注意 item 类型需要手动替换
+        foreach (Func<string> item in func.GetInvocationList())
+        {
+            output.WriteLine(item());
+        }
+    }
+
     public void Fun1()
     {
         output.WriteLine("Fun1 执行了");
