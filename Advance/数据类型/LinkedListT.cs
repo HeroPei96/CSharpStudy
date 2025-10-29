@@ -1,4 +1,4 @@
-namespace 进阶;
+namespace 进阶.数据类型;
 
 /// <summary>
 /// LinkedList - 双向链表

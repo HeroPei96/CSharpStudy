@@ -1,4 +1,4 @@
-namespace 进阶;
+namespace 进阶.泛型;
 
 /// <summary>
 /// 泛型

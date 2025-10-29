@@ -2,7 +2,7 @@
 // #undef test
 
 
-namespace 进阶;
+namespace 进阶.预处理指令;
 
 /// <summary>
 /// 预处理指令

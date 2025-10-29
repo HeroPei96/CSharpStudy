@@ -1,4 +1,4 @@
-namespace 进阶;
+namespace 进阶.数据类型;
 
 /// <summary>
 /// List - 本质上是有泛型功能的 ArrayList

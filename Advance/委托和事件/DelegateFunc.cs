@@ -1,4 +1,4 @@
-namespace 进阶;
+namespace 进阶.委托和事件;
 
 /// <summary>
 /// delegate - 匿名函数

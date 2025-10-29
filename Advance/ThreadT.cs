@@ -1,4 +1,4 @@
-namespace 进阶;
+namespace 进阶.多线程;
 
 /// <summary>
 /// 多线程

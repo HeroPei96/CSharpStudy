@@ -1,4 +1,4 @@
-namespace 进阶;
+namespace 进阶.数据类型;
 
 /// <summary>
 /// Dictionary - 本质上是有泛型功能的 HashTable

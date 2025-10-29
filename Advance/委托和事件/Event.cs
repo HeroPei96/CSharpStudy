@@ -1,4 +1,4 @@
-namespace 进阶;
+namespace 进阶.委托和事件;
 
 /// <summary>
 /// Event - 事件
