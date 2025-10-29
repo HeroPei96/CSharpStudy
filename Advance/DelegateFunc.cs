@@ -20,7 +20,10 @@ public class DelegateFunc : MyBasePrintClass
         action2(8);
 
         //delegate 可以省略
-        Action action = () => { output.WriteLine("这是一个无参无返回的匿名函数"); };
+        //这种即为 lambda 表达式
+        Action action1L = () => { output.WriteLine("这是一个无参无返回的匿名函数"); };
+        //参数类型都可以省略，只需与委托或事件容器一致即可
+        Action<int> action2L = (int value) => { output.WriteLine($"这是一个有参无返回的匿名函数，参数: {value}"); };
     }
 
     [Fact(DisplayName = "有返回值的匿名函数")]
@@ -40,5 +43,11 @@ public class DelegateFunc : MyBasePrintClass
 
         output.WriteLine(action1());
         output.WriteLine(action2(8));
+
+        Func<int, string> actionL2 = value =>
+        {
+            output.WriteLine($"这是一个有参有返回的匿名函数，参数: {value}");
+            return "World";
+        };
     }
 }
