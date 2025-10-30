@@ -21,6 +21,14 @@ public class Init
         List<int> list = new List<int>() { 1, 2, 3, 4, 5 };
         Dictionary<int, string> dict = new Dictionary<int, string>() { { 1, "ABC" }, { 2, "DEF" } };
     }
+
+    [Fact(DisplayName = "初始化 - 匿名类型")]
+    public void Test3()
+    {
+        //声明一个匿名类型，只能有变量不能有函数
+        var v = new { age = 10, money = 11, name = "小明" };
+        Console.WriteLine(v.age);
+    }
 }
 
 class Person
