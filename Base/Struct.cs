@@ -15,6 +15,9 @@ public class Struct : MyBasePrintClass
     public void Test1()
     {
         Student s1 = new Student(10, true);
+        //声明时初始化的成员变量没有生效
+        //经过多次实验，在构造函数中对任一成员变量进行赋值操作，那么声明中的初始化就会生效，否则不会
+        Student s2 = new Student();
         output.WriteLine($"Red number: {s1.GetNumber()}");
     }
 
@@ -41,23 +44,29 @@ public class Struct : MyBasePrintClass
 /// </summary>
 struct Student
 {
-    //结构体中，成员变量不能直接初始化
+    //结构体中，成员变量声明时不能初始化(初始化赋值不一定会生效)
+    //  经过多次实验，在构造函数中对任一成员变量进行赋值操作，那么声明中的初始化就会生效，否则不会
     //变量类型 可以写任意类型 包括其他类型的结构体 “但是不能是当前结构体”
-    public int age;
-    public bool sex;
-    public int number;
+    public int age = 10;
+    public bool sex = true;
+    public int number = 123;
+    public int high = 175;
 
     public List<string> nameList;
     //变量类型不能为 当前自己的结构体
     //Student stu; //会报错
 
     //构造函数
-    //如果声明了构造函数，那么必须在其中对所有的变量进行初始化
+    public Student()
+    {
+        //经过多次实验，在构造函数中对任一成员变量进行赋值操作，那么声明中的初始化就会生效，否则不会
+        high = 123;
+    }
+
     public Student(int age, bool sex)
     {
         this.age = age;
         this.sex = sex;
-        //如果声明了构造函数，那么必须在其中对所有的变量进行初始化
         this.number = new Random().Next(0, 100);
     }
 
