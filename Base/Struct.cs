@@ -15,7 +15,7 @@ public class Struct : MyBasePrintClass
     public void Test1()
     {
         Student s1 = new Student(10, true);
-        output.WriteLine($@"Red number: {s1.GetNumber()}");
+        output.WriteLine($"Red number: {s1.GetNumber()}");
     }
 
     [Fact(DisplayName = "结构体值类型和引用类型的存储")]
