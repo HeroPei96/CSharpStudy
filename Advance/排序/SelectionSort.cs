@@ -4,6 +4,9 @@ namespace 进阶.排序;
 
 /// <summary>
 /// 选择排序
+///   从第一位开始和后面的比较，直到找到最小的并和第一位调换位置
+/// 再从第二位开始和后面的比较，直到找到最小的并和第二位调换位置
+/// ...
 /// </summary>
 public class SelectionSort : MyBasePrintClass
 {
