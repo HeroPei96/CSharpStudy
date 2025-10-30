@@ -13,6 +13,14 @@ public class Init
         //括号() 可以省略不写
         Person person2 = new Person { Age = 18 };
     }
+
+    [Fact(DisplayName = "初始化 - 数组/集合/字典 通过 {} 添加元素")]
+    public void Test2()
+    {
+        int[] array = new int[] { 1, 2, 3, 4, 5 };
+        List<int> list = new List<int>() { 1, 2, 3, 4, 5 };
+        Dictionary<int, string> dict = new Dictionary<int, string>() { { 1, "ABC" }, { 2, "DEF" } };
+    }
 }
 
 class Person
