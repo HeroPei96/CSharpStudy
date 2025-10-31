@@ -31,7 +31,7 @@ public class GenericsT : MyBasePrintClass
 
 /// <summary>
 /// 泛型
-/// 泛型约束 泛型类约束，泛型方法约束
+/// 泛型约束分为 泛型类约束，泛型方法约束
 /// 泛型约束可以组合使用，通过 , 组合 例如 where T : class, new()
 /// 1. 值类型  where T:struct
 /// 2. 引用类型 where T:class
