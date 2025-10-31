@@ -2,6 +2,7 @@ namespace 进阶.排序;
 
 /// <summary>
 /// 要排序的数据
+/// <see href="https://www.bilibili.com/video/BV1e8411M7Lr">排序动画推荐</see>
 /// </summary>
 public class DataSort
 {

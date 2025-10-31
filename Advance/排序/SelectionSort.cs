@@ -3,6 +3,7 @@ using System.Text;
 namespace 进阶.排序;
 
 /// <summary>
+/// <see href="https://www.bilibili.com/video/BV1e8411M7Lr">选择排序 动画</see>
 /// 选择排序：每一轮都找到一个最小的元素，将其与前排交换位置
 ///   从第一位开始和后面的比较，直到找到最小的并和第一位调换位置
 /// 再从第二位开始和后面的比较，直到找到最小的并和第二位调换位置

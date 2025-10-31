@@ -3,6 +3,7 @@ using System.Text;
 namespace 进阶.排序;
 
 /// <summary>
+/// <see href="https://www.bilibili.com/video/BV1Y8411T7LC">插入排序 动画</see>
 /// 插入排序：从第二个元素开始，将其与前排比较并交换位置
 /// 与冒泡逻辑相似，区别是 从第二位开始，将较小值与前排冒泡交换
 /// </summary>

@@ -4,6 +4,7 @@ namespace 进阶.排序;
 
 /// <summary>
 /// 希尔排序 - 升级版的插入排序
+/// <see href="https://www.bilibili.com/video/BV1Dv4y147ai">希尔排序 动画</see>
 /// 多引入了步长的概念
 /// </summary>
 public class ShellSort : MyBasePrintClass

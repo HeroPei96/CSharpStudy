@@ -4,6 +4,7 @@ namespace 进阶.排序;
 
 /// <summary>
 /// 快速排序
+/// <see href="https://www.bilibili.com/video/BV1m84y1n7xb">快速排序 动画</see>
 /// 要配合递归执行
 /// </summary>
 public class QuickSort : MyBasePrintClass
