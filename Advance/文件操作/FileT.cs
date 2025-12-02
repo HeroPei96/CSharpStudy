@@ -142,7 +142,7 @@ public class FileT : MyFileBase
         // File.Replace();
     }
 
-    [Fact(DisplayName = "替换文件")]
+    [Fact(DisplayName = "打开文件")]
     public void Test12()
     {
         string filePath = GetTestFilePath() + "test.txt";
@@ -154,11 +154,15 @@ public class FileT : MyFileBase
         //  OpenOrCreate 用于打开文件，如果文件不存在则创建它。
         //  Append 若文件存在，打开并查找文件尾，不存在则新建一个文件
         //  Truncate 打开并清空文件内容
-        //参数三 访问模式 - 针对其他线程对该文件的访问
+        //参数三 访问模式 - 对文件可执行的操作
+        //  Read 读取
+        //  Write 写入
+        //  ReadWrite 读和写
+        //参数四 访问模式 - 针对其他线程对该文件的访问
         //  None 谢绝共享
         //  Read 允许别的线程读取当前文件
         //  Write 允许别的线程写入该文件
         //  ReadWrite 允许别的线程读写该文件
-        FileStream fileStream = File.Open(filePath, FileMode.OpenOrCreate, FileAccess.Read);
+        FileStream fileStream = File.Open(filePath, FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read);
     }
 }
