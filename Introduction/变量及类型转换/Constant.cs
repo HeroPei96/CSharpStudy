@@ -1,4 +1,4 @@
-namespace 入门;
+namespace 入门.常量;
 
 /// <summary>
 /// 常量
@@ -20,7 +20,7 @@ public class Constant : MyBasePrintClass
 
         // 常量声明时必须初始化
         //const int c2;
-         
+
         // 常量声明后不可修改
         // c1 = 20;
     }

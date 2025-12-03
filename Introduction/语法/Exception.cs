@@ -1,4 +1,4 @@
-namespace 入门;
+namespace 入门.异常捕获;
 
 public class Exception : MyBasePrintClass
 {

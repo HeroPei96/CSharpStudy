@@ -1,4 +1,4 @@
-namespace 入门;
+namespace 入门.运算符;
 
 /// <summary>
 /// 运算符

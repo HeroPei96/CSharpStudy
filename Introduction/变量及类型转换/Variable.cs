@@ -1,4 +1,4 @@
-namespace 入门;
+namespace 入门.变量;
 
 /// <summary>
 /// 变量

@@ -1,4 +1,4 @@
-namespace 入门;
+namespace 入门.switch_语句;
 
 public class Switch : MyBasePrintClass
 {
