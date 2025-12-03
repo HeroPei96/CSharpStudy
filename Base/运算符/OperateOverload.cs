@@ -1,11 +1,11 @@
-namespace 核心;
+namespace 基础.运算符重载;
 
 /// <summary>
 /// 运算符重载
 /// </summary>
-public class Operate : MyBasePrintClass
+public class OperateOverload : MyBasePrintClass
 {
-    public Operate(ITestOutputHelper output) : base(output)
+    public OperateOverload(ITestOutputHelper output) : base(output)
     {
     }
 

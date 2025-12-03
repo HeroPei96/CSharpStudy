@@ -1,3 +1,3 @@
 global using Xunit;
-global using 入门;
+global using 基础;
 global using Xunit.Abstractions;

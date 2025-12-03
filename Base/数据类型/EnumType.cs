@@ -1,4 +1,4 @@
-namespace 基础;
+namespace 基础.枚举;
 
 /// <summary>
 /// 枚举

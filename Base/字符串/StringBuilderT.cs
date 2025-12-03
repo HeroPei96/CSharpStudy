@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace 核心;
+namespace 基础.字符串构建器;
 
 /// <summary>
 /// StringBuilder

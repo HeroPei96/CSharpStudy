@@ -1,4 +1,4 @@
-namespace 核心;
+namespace 核心.抽象类和抽象方法;
 
 /// <summary>
 /// 抽象类和抽象方法 - Abstract

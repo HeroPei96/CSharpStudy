@@ -1,4 +1,4 @@
-namespace 入门.类型转换;
+namespace 基础.类型转换;
 
 /// <summary>
 /// 类型转换

@@ -1,13 +1,13 @@
-namespace 基础;
+namespace 基础.特殊参数;
 
 /// <summary>
-/// 函数
+/// 特殊参数
 /// ref & out 在函数中的使用
 /// params 变长参数
 /// </summary>
-public class Function : MyBasePrintClass
+public class Parameter : MyBasePrintClass
 {
-    public Function(ITestOutputHelper output) : base(output)
+    public Parameter(ITestOutputHelper output) : base(output)
     {
     }
 

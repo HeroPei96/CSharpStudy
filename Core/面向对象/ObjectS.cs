@@ -1,4 +1,4 @@
-namespace 核心;
+namespace 核心.万物之父_object;
 
 /// <summary>
 /// 万物之父 - object/Object

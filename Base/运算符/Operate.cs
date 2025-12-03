@@ -1,11 +1,11 @@
-namespace 入门.运算符;
+namespace 基础.运算符;
 
 /// <summary>
 /// 运算符
 /// </summary>
-public class Operator : MyBasePrintClass
+public class Operate : MyBasePrintClass
 {
-    public Operator(ITestOutputHelper output) : base(output)
+    public Operate(ITestOutputHelper output) : base(output)
     {
     }
 

@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace 基础;
+namespace 基础.结构体;
 
 /// <summary>
 /// 结构体

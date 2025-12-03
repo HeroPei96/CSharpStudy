@@ -1,4 +1,4 @@
-namespace 入门;
+namespace 基础;
 
 public class MyBasePrintClass
 {

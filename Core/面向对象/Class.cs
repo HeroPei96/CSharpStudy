@@ -1,7 +1,7 @@
-namespace 核心;
+namespace 核心.类;
 
 /// <summary>
-/// 面向对象
+/// 类
 /// </summary>
 public class Class : MyBasePrintClass
 {

@@ -1,4 +1,4 @@
-namespace 入门.常量;
+namespace 基础.常量;
 
 /// <summary>
 /// 常量

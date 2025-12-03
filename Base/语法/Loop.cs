@@ -1,4 +1,4 @@
-namespace 入门.循环;
+namespace 基础.循环;
 
 /// <summary>
 /// 循环

@@ -1,11 +1,11 @@
-namespace 核心;
+namespace 核心.继承;
 
 /// <summary>
 /// 继承
 /// </summary>
-public class Extend : MyBasePrintClass
+public class ExtendT : MyBasePrintClass
 {
-    public Extend(ITestOutputHelper output) : base(output)
+    public ExtendT(ITestOutputHelper output) : base(output)
     {
     }
 

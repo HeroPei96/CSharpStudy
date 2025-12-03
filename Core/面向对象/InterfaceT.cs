@@ -1,11 +1,11 @@
-namespace 核心;
+namespace 核心.接口;
 
 /// <summary>
 /// 接口
 /// </summary>
-public class Interface : MyBasePrintClass
+public class InterfaceT : MyBasePrintClass
 {
-    public Interface(ITestOutputHelper output) : base(output)
+    public InterfaceT(ITestOutputHelper output) : base(output)
     {
     }
 }

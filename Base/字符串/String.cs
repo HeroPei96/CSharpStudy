@@ -1,4 +1,4 @@
-namespace 基础;
+namespace 基础.字符串;
 
 /// <summary>
 /// 字符串

@@ -1,4 +1,4 @@
-namespace 基础;
+namespace 基础.数组;
 
 /// <summary>
 /// 数组
