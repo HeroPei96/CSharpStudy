@@ -2,8 +2,6 @@ namespace 进阶.文件操作;
 
 public class MyFileBase : MyBasePrintClass
 {
-    protected String currentPath = "D:/workSpace/CSharp/CSharpStudy/03-核心/03-文件操作/测试文件";
-
     public MyFileBase(ITestOutputHelper output) : base(output)
     {
     }

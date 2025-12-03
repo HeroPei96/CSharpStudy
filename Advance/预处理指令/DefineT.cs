@@ -1,7 +1,6 @@
 #define test
 // #undef test
 
-
 namespace 进阶.预处理指令;
 
 /// <summary>
