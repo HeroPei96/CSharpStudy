@@ -1,6 +1,7 @@
 namespace 进阶.特殊语法;
 
 /// <summary>
+/// Null 传播器
 /// 语法糖 - ? 的空值处理
 /// </summary>
 public class Null : MyBasePrintClass

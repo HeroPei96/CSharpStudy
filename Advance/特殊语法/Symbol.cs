@@ -9,7 +9,7 @@ public class Symbol : MyBasePrintClass
     {
     }
 
-    [Fact(DisplayName = "$ 字符串拼接变量")]
+    [Fact(DisplayName = "$ 字符串内插拼接变量")]
     public void Test1()
     {
         string str = "HeroP";

@@ -41,7 +41,11 @@ public class Parameter : MyBasePrintClass
         int value;
         //调用时必须添加 out 关键字
         ChangeOutValue(out value);
-        output.WriteLine(value.ToString());
+        output.WriteLine($"value: {value}");
+        
+        //简便写法，out 修饰的参数可以无需在外部声明
+        ChangeOutValue(out int myValue);
+        output.WriteLine($"myValue: {myValue}");
     }
 
     private void ChangeOutValue(out int value)
