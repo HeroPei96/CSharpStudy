@@ -123,6 +123,11 @@ public class SevenT : MyBasePrintClass
         (string myStr, int myI, float myF) = GetInfo2();
         output.WriteLine(myStr);
 
+        //4.元组匹配
+        //相当于 xyz.i == XX && xyz.f == XX && xyz.b == XX
+        if (xyz is (1, 5.5f, true))
+            output.WriteLine("元组匹配正确");
+
         (string, int, float) GetInfo1()
         {
             return ("123", 2, 5.5f);
