@@ -1,4 +1,4 @@
-namespace 进阶.线程池;
+namespace 进阶.多线程.线程池;
 
 /// <summary>
 /// 线程池
