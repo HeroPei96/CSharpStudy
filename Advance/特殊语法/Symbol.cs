@@ -13,7 +13,7 @@ public class Symbol : MyBasePrintClass
     public void Test1()
     {
         string str = "HeroP";
-        output.WriteLine($"Hello! {str}");
+        WriteLine($"Hello! {str}");
     }
 
     [Fact(DisplayName = "@ 字符串取消转义")]
@@ -21,6 +21,6 @@ public class Symbol : MyBasePrintClass
     {
         //字符串前使用 @ 可以无需使用 \ 转义
         //英文双引号 " 除外
-        output.WriteLine(@"\a\b");
+        WriteLine(@"\a\b");
     }
 }

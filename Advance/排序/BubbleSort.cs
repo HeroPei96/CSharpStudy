@@ -27,9 +27,9 @@ public class BubbleSort : MyBasePrintClass
     {
         int[] arr = DataSort.GenerateArr(5);
 
-        output.WriteLine("Sort 前: ");
+        WriteLine("Sort 前: ");
         PrintArr(arr);
-        output.WriteLine("Sort 后: ");
+        WriteLine("Sort 后: ");
         Sort(arr);
         PrintArr(arr);
     }
@@ -72,6 +72,6 @@ public class BubbleSort : MyBasePrintClass
         }
 
         sb.Remove(sb.Length - 2, 2);
-        output.WriteLine(sb.ToString());
+        WriteLine(sb.ToString());
     }
 }

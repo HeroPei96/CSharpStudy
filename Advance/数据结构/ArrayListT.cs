@@ -61,14 +61,14 @@ public class ArrayListT : MyBasePrintClass
         }
 
         //Count 集合内容长度
-        output.WriteLine($"list.Count={list.Count}");
+        WriteLine($"list.Count={list.Count}");
         //Capacity 容量
-        output.WriteLine($"list.Capacity={list.Capacity}");
+        WriteLine($"list.Capacity={list.Capacity}");
 
         //迭代器遍历
         foreach (object obj in list)
         {
-            output.WriteLine($"obj: {obj}");
+            WriteLine($"obj: {obj}");
         }
     }
 }

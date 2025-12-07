@@ -1,11 +1,11 @@
-namespace 核心.类;
+namespace 核心.面向对象.类;
 
 /// <summary>
 /// 类
 /// </summary>
-public class Class : MyBasePrintClass
+public class ClassT : MyBasePrintClass
 {
-    public Class(ITestOutputHelper output) : base(output)
+    public ClassT(ITestOutputHelper output) : base(output)
     {
     }
 
@@ -14,22 +14,20 @@ public class Class : MyBasePrintClass
     {
         Person p = new Person(18, "HeroP");
         //相当于调用属性的 get
-        output.WriteLine(p.Name);
+        WriteLine(p.Name);
 
         //相当于调用属性的 set
         // p.Name = "ABC";
-        // output.WriteLine(p.Name);
+        // WriteLine(p.Name);
     }
 
-    /// <summary>
-    /// 常用于数组对象，也可用于选择器，例如get中自定义switch选择
-    /// </summary>
+    // 常用于数组对象，也可用于选择器，例如get中自定义switch选择
     [Fact(DisplayName = "索引器")]
     public void Test2()
     {
         Person p = new Person(18, "HeroP");
         p[0] = new Person(10, "ABC");
-        output.WriteLine(p[0].Name);
+        WriteLine(p[0].Name);
     }
 
     /// <summary>
@@ -40,10 +38,10 @@ public class Class : MyBasePrintClass
     {
         Person p = new Person(18, "HeroP");
         p.Name = "ABC";
-        output.WriteLine(p.SpeakValue());
+        WriteLine(p.SpeakValue());
 
         string str = "Test";
-        output.WriteLine(str.SpeakValue("QWE"));
+        WriteLine(str.SpeakValue("QWE"));
     }
 
     [Fact(DisplayName = "分布类")]
@@ -67,8 +65,7 @@ public class Person
     //属性外部定义的访问修饰符是默认的修饰符
     public string Name
     {
-        //简写方式一
-        //注：如果用该简写方式，相当于一个单独的变量，无法与已有变量产生关联
+        //简写方式一，无法关联成员变量
         // get;
         // set;
 
@@ -76,13 +73,9 @@ public class Person
         get => name;
 
         //正常写法
-        //内部属性方法可以单独定义访问修饰符（不能两个都单独定义访问修饰符，外部属性上定义的一定要生效），默认同属性一致，若单独定义，那权限一定要小于属性上定义的
-        // private set
-        set
-        {
-            //value 只能用于 set 属性，表示外部传入的值
-            name = value;
-        }
+        //内部属性方法可以单独定义访问修饰符，若单独定义，那权限一定要小于属性上定义的，例 private set
+        //value 表示外部传入的值
+        set => name = value;
     }
 
     private Person[] friends = new Person[5];
@@ -91,8 +84,8 @@ public class Person
     //此处可以有多个参数，可以重载，例如 this[int param1, int param2]（二维数组）
     public Person this[int index]
     {
-        get { return friends[index]; }
-        set { friends[index] = value; }
+        get => friends[index];
+        set => friends[index] = value;
     }
 
     public Person(int age)
@@ -108,10 +101,7 @@ public class Person
 
     //析构函数 用于在某一对象被垃圾回收时自动调用
     //在Unity中几乎不会使用，只做了解即可
-    ~Person()
-    {
-        Console.WriteLine("内存被回收，自动触发该析构函数");
-    }
+    ~Person() => Console.WriteLine("内存被回收，自动触发该析构函数");
 }
 
 /// <summary>

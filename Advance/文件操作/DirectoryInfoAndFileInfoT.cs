@@ -28,7 +28,7 @@ public class DirectoryInfoAndFileInfoT : MyFileBase
             output.WriteLine($"包含的文件夹名: {item.Name}");
         }
 
-        output.WriteLine("***** *****");
+        WriteMark();
         //得到所有子文件信息(不含子级的子级)
         FileInfo[] files = dInfo.GetFiles();
         foreach (FileInfo item in files)

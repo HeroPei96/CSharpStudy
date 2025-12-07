@@ -26,12 +26,12 @@ public class Event : MyBasePrintClass
 
     public void Fun1()
     {
-        output.WriteLine("Fun1 执行了");
+        WriteLine("Fun1 执行了");
     }
 
     public int Fun2(int value)
     {
-        output.WriteLine($"Fun2 执行了, 参数: {value}");
+        WriteLine($"Fun2 执行了, 参数: {value}");
         return value * 2;
     }
 }

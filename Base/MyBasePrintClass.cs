@@ -8,4 +8,9 @@ public class MyBasePrintClass
     {
         this.output = output;
     }
+
+    //标记分隔符
+    protected void WriteMark() => output.WriteLine("***** 分隔符 *****");
+
+    protected void WriteLine(string msg) => output.WriteLine(msg);
 }

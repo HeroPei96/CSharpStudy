@@ -26,7 +26,7 @@ public class Enumerator : MyBasePrintClass
         CustomList list = new CustomList();
         foreach (int item in list)
         {
-            output.WriteLine(item.ToString());
+            WriteLine(item.ToString());
         }
     }
 
@@ -36,7 +36,7 @@ public class Enumerator : MyBasePrintClass
         CustomList list = new CustomList();
         foreach (int item in list)
         {
-            output.WriteLine(item.ToString());
+            WriteLine(item.ToString());
         }
     }
 }

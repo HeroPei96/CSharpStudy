@@ -19,7 +19,7 @@ public class AttributeT : MyBasePrintClass
         //参数二：代表是否搜索继承链（属性和事件忽略此参数）
         if (type.IsDefined(typeof(MyCustomAttribute), false))
         {
-            output.WriteLine("使用了 MyCustomAttribute 特性");
+            WriteLine("使用了 MyCustomAttribute 特性");
         }
 
         //获取type元数据中的所有特性，这里 true 即会搜索继承链上的
@@ -30,7 +30,7 @@ public class AttributeT : MyBasePrintClass
             if (item is MyCustomAttribute)
             {
                 MyCustomAttribute arrributeItem = item as MyCustomAttribute;
-                output.WriteLine(arrributeItem.info);
+                WriteLine(arrributeItem.info);
                 arrributeItem.TestFun();
             }
         }

@@ -25,7 +25,7 @@ public class DefineT : MyBasePrintClass
     public void Test1()
     {
 #if test
-        output.WriteLine("test");
+        WriteLine("test");
 #endif
     }
 }

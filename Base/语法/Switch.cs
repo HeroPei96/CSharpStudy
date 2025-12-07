@@ -15,16 +15,16 @@ public class Switch : MyBasePrintClass
         switch (str)
         {
             case "123":
-                output.WriteLine("case: 123");
+                WriteLine("case: 123");
                 break;
             case "456":
-                output.WriteLine("case: 456");
+                WriteLine("case: 456");
                 break;
             case "abc":
-                output.WriteLine("case: abc");
+                WriteLine("case: abc");
                 break;
             default:
-                output.WriteLine("case: default");
+                WriteLine("case: default");
                 break;
         }
     }

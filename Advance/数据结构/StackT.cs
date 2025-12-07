@@ -30,7 +30,7 @@ public class StackT : MyBasePrintClass
         //通过 Contains 判断是否存在对应元素 
         if (stack.Contains("456"))
         {
-            output.WriteLine("存在该元素");
+            WriteLine("存在该元素");
         }
 
         //清空
@@ -47,12 +47,12 @@ public class StackT : MyBasePrintClass
         stack.Push("qaz");
 
         //长度
-        output.WriteLine($"Stack Count: {stack.Count}");
+        WriteLine($"Stack Count: {stack.Count}");
         
         //遍历 - 从栈顶到栈底
         foreach (object item in stack)
         {
-            output.WriteLine(item.ToString());
+            WriteLine(item.ToString());
         }
 
         //转数组，顺序也是从栈顶到栈底

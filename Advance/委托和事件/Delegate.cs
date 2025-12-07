@@ -31,7 +31,7 @@ public class Delegate : MyBasePrintClass
     {
         MyFun2 myFun = Fun2;
         int result = myFun.Invoke(5);
-        output.WriteLine($"result: {result}");
+        WriteLine($"result: {result}");
     }
 
     //通过 + 或 += 使委托可以存储多个函数
@@ -43,7 +43,7 @@ public class Delegate : MyBasePrintClass
         myFun += Fun1;
         myFun += Fun1;
         myFun.Invoke();
-        output.WriteLine("*****");
+        WriteMark();
         //多 - 不会报错
         myFun -= Fun1;
         myFun.Invoke();
@@ -76,18 +76,18 @@ public class Delegate : MyBasePrintClass
         //注意 item 类型需要手动替换
         foreach (Func<string> item in func.GetInvocationList())
         {
-            output.WriteLine(item());
+            WriteLine(item());
         }
     }
 
     public void Fun1()
     {
-        output.WriteLine("Fun1 执行了");
+        WriteLine("Fun1 执行了");
     }
 
     public int Fun2(int value)
     {
-        output.WriteLine($"Fun2 执行了, 参数: {value}");
+        WriteLine($"Fun2 执行了, 参数: {value}");
         return value * 2;
     }
 }

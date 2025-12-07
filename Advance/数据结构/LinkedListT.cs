@@ -36,7 +36,7 @@ public class LinkedListT : MyBasePrintClass
         //存在判断
         if (linkedList.Contains(3))
         {
-            output.WriteLine("存在该元素");
+            WriteLine("存在该元素");
         }
 
         //正序查找指定元素
@@ -67,17 +67,17 @@ public class LinkedListT : MyBasePrintClass
         linkedList.AddLast(4);
         linkedList.AddLast(3);
         
-        output.WriteLine("foreach 遍历");
+        WriteLine("foreach 遍历");
         foreach (int item in linkedList)
         {
-            output.WriteLine($"item: {item}");
+            WriteLine($"item: {item}");
         }
 
-        output.WriteLine("通过next 遍历");
+        WriteLine("通过next 遍历");
         LinkedListNode<int>? node = linkedList.First;
         while (node != null)
         {
-            output.WriteLine($"node: {node.Value}");
+            WriteLine($"node: {node.Value}");
             node = node.Next;
         }
     }

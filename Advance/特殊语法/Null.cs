@@ -23,14 +23,14 @@ public class Null : MyBasePrintClass
         if (a.HasValue)
         {
             //两种都可以
-            output.WriteLine(a.Value.ToString());
-            output.WriteLine(a.ToString());
+            WriteLine(a.Value.ToString());
+            WriteLine(a.ToString());
         }
 
         //如果该值为空，使用默认值，默认值可自定义
         //！注意：GetValueOrDefault 内部调用的是 this.value 不是 Value
-        output.WriteLine(a.GetValueOrDefault().ToString());
-        output.WriteLine(a.GetValueOrDefault(10).ToString());
+        WriteLine(a.GetValueOrDefault().ToString());
+        WriteLine(a.GetValueOrDefault(10).ToString());
     }
 
     [Fact(DisplayName = "引用类型判空语法糖")]

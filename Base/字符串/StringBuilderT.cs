@@ -16,9 +16,9 @@ public class StringBuilderT : MyBasePrintClass
     {
         StringBuilder sb = new StringBuilder();
         //注意不是字符串长度
-        output.WriteLine($"初始容量: {sb.Capacity}");
+        WriteLine($"初始容量: {sb.Capacity}");
         //字符串长度
-        output.WriteLine($"字符长度: {sb.Length}");
+        WriteLine($"字符长度: {sb.Length}");
 
         //添加
         sb.Append("123");
@@ -30,7 +30,7 @@ public class StringBuilderT : MyBasePrintClass
         //移除指定索引，指定长度的字符数组
         sb.Remove(2, 3);
 
-        output.WriteLine($"str: {sb.ToString()}");
+        WriteLine($"str: {sb.ToString()}");
 
         //获取指定字符
         output.WriteLine($"sb[0]: {sb[0]}");

@@ -32,7 +32,7 @@ public class HashTableT : MyBasePrintClass
         hashTable.Remove(1);
 
         //查
-        output.WriteLine(hashTable["333"].ToString());
+        WriteLine(hashTable["333"].ToString());
         //获取一个不存在的键值对时不会报错，返回 null
         object o = hashTable["qwer"];
         //查看键是否存在
@@ -55,12 +55,12 @@ public class HashTableT : MyBasePrintClass
         hashTable.Add(2, 222);
         hashTable.Add("333", true);
 
-        output.WriteLine($"hashTable.Count: {hashTable.Count}");
+        WriteLine($"hashTable.Count: {hashTable.Count}");
 
         //遍历 键
         foreach (object item in hashTable.Keys)
         {
-            output.WriteLine($"key: {item}, value: {hashTable[item]}");
+            WriteLine($"key: {item}, value: {hashTable[item]}");
         }
 
         //遍历 值
@@ -69,18 +69,18 @@ public class HashTableT : MyBasePrintClass
         }
 
         //键值对一起遍历
-        output.WriteLine("键值对一起遍历");
+        WriteLine("键值对一起遍历");
         foreach (DictionaryEntry entry in hashTable)
         {
-            output.WriteLine($"key: {entry.Key}, value: {entry.Value}");
+            WriteLine($"key: {entry.Key}, value: {entry.Value}");
         }
 
         //迭代器遍历
-        output.WriteLine("迭代器遍历");
+        WriteLine("迭代器遍历");
         IDictionaryEnumerator enumerator = hashTable.GetEnumerator();
         while (enumerator.MoveNext())
         {
-            output.WriteLine($"key: {enumerator.Key}, value: {enumerator.Value}");
+            WriteLine($"key: {enumerator.Key}, value: {enumerator.Value}");
         }
     }
 }

@@ -13,10 +13,10 @@ public class OneToFourT : MyBasePrintClass
     public void Test1()
     {
         Test(f: 3.3f, b: false, i: 10);
-    }
 
-    public void Test(int i, float f, bool b)
-    {
+        void Test(int i, float f, bool b)
+        {
+        }
     }
 
     //dynamic 动态类型最好不要使用，某些场景下可以代替反射使用
@@ -27,5 +27,18 @@ public class OneToFourT : MyBasePrintClass
     {
         dynamic dyn = 1;
         object obj = 2;
+    }
+
+    [Fact(DisplayName = "匿名类型")]
+    public void Test3()
+    {
+        var obj = new { Name = "HeroP", Age = 18 };
+        output.WriteLine($"name: {obj.Name}, age: {obj.Age}");
+        //<>f__AnonymousType0`2[System.String,System.Int32]
+        output.WriteLine(obj.GetType().ToString());
+        
+        //还可以有匿名空对象
+        var emptyObj = new {};
+        output.WriteLine(emptyObj.GetType().ToString());
     }
 }

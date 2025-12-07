@@ -10,7 +10,7 @@ namespace 进阶.新版本功能;
 /// 解构函数 Deconstruct
 /// 模式匹配增强功能
 /// </summary>
-public class EightT : MyBasePrintClass
+public partial class EightT : MyBasePrintClass
 {
     public EightT(ITestOutputHelper output) : base(output)
     {
@@ -69,6 +69,7 @@ public class EightT : MyBasePrintClass
         output.WriteLine($"name: {name}, age: {age}");
     }
 
+    //对于所有的 模式匹配增强功能是针对表达式的，不是语句 必须要有一个具体的返回值
     [Fact(DisplayName = "模式匹配增强功能-switch")]
     public void Test5()
     {
@@ -128,12 +129,13 @@ public class EightT : MyBasePrintClass
 //用于 解构函数 & 模式匹配增强功能
 public class Person
 {
-    public string name;
+    //= null! 引用类型如果不在构造器中显示地初始化，那么IDE会进行提醒，但如果通过其他手段初始化了想要关闭提醒就可以这么做
+    public string name = null!;
 
     //还能把 private 类型的数据给结构出来！
     private int age;
-    public string number;
-    public string email;
+    public string number = null!;
+    public string email = null!;
 
     public void Init()
     {

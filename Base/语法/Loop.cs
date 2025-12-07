@@ -15,12 +15,12 @@ public class Loop : MyBasePrintClass
         int[] array = new int[0];
         for (var i = 0; i < array.Length; i++)
         {
-            output.WriteLine($"array[{i}] = {array[i]}");
+            WriteLine($"array[{i}] = {array[i]}");
         }
 
         foreach (int i in array)
         {
-            output.WriteLine($"item = {array[i]}");
+            WriteLine($"item = {array[i]}");
         }
     }
 }

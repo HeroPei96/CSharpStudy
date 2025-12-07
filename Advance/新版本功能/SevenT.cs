@@ -10,7 +10,7 @@ namespace 进阶.新版本功能;
 /// 模式匹配
 /// 抛出表达式
 /// </summary>
-public class SevenT : MyBasePrintClass
+public partial class SevenT : MyBasePrintClass
 {
     public SevenT(ITestOutputHelper output) : base(output)
     {

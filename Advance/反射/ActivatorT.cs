@@ -16,10 +16,10 @@ public class ActivatorT : MyBasePrintClass
         Type type = typeof(TestType);
         //快捷调用无参构造函数
         TestType? obj = Activator.CreateInstance(type) as TestType;
-        output.WriteLine($"obj.j: {obj.j}");
+        WriteLine($"obj.j: {obj.j}");
 
         //调用有参构造函数
         obj = Activator.CreateInstance(type, 5, 8, "HeroP") as TestType;
-        output.WriteLine($"obj.str: {obj.str}");
+        WriteLine($"obj.str: {obj.str}");
     }
 }

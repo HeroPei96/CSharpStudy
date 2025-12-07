@@ -21,6 +21,6 @@ public class Parameter : MyBasePrintClass
     //参数带默认值的为 可选参数 调用时可以不传
     public void Test1Foo(string name, int age = 18, bool alive = true)
     {
-        output.WriteLine($"name: {name}, age: {age}, alive: {alive}");
+        WriteLine($"name: {name}, age: {age}, alive: {alive}");
     }
 }

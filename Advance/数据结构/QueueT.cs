@@ -25,11 +25,11 @@ public class QueueT : MyBasePrintClass
 
         //查看队首
         object? top = queue.Peek();
-        output.WriteLine($"top: {top}");
+        WriteLine($"top: {top}");
 
         if (queue.Contains("456"))
         {
-            output.WriteLine("存在该元素");
+            WriteLine("存在该元素");
         }
 
         //清空
@@ -44,19 +44,19 @@ public class QueueT : MyBasePrintClass
         queue.Enqueue("qwe");
         queue.Enqueue("456");
         queue.Enqueue("qaz");
-        output.WriteLine($"Queue Count: {queue.Count}");
+        WriteLine($"Queue Count: {queue.Count}");
 
-        output.WriteLine($"Foreach 遍历");
+        WriteLine($"Foreach 遍历");
         foreach (object item in queue)
         {
-            output.WriteLine(item.ToString());
+            WriteLine(item.ToString());
         }
 
-        output.WriteLine($"转为数组 遍历");
+        WriteLine($"转为数组 遍历");
         object?[] array = queue.ToArray();
         for (int i = 0; i < array.Length; i++)
         {
-            output.WriteLine(array[i].ToString());
+            WriteLine(array[i].ToString());
         }
 
         //循环出队

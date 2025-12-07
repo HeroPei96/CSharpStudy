@@ -4,21 +4,19 @@ namespace 核心.万物之父_object;
 /// 万物之父 - object/Object
 /// 装箱拆箱
 /// </summary>
-public class ObjectS : MyBasePrintClass
+public class ObjectT : MyBasePrintClass
 {
-    public ObjectS(ITestOutputHelper output) : base(output)
+    public ObjectT(ITestOutputHelper output) : base(output)
     {
     }
 
-    /// <summary>
-    /// object/Object，本质是一个东西 object 是别名关键字
-    /// </summary>
+    // object/Object object 是别名
     [Fact(DisplayName = "万物之父-object")]
     public void Test1()
     {
         object o = "HeroP";
         string? str = o as string;
-        output.WriteLine($"str: {str}");
+        WriteLine($"str: {str}");
     }
 
     /// <summary>

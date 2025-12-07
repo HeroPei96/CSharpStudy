@@ -21,7 +21,7 @@ public class AssemblyT : MyBasePrintClass
         Type[] types = assembly.GetTypes();
         foreach (Type item in types)
         {
-            output.WriteLine($"type: {item.FullName}");
+            WriteLine($"type: {item.FullName}");
         }
 
         //获取 Type

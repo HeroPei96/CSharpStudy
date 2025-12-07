@@ -21,7 +21,7 @@ public class ThreadT : MyBasePrintClass
             while (true)
             {
                 Thread.Sleep(200);
-                output.WriteLine("新线程持续运行中");
+                WriteLine("新线程持续运行中");
             }
         });
         //IsBackground 默认为 false 即表示为 一个前台进程
@@ -30,7 +30,7 @@ public class ThreadT : MyBasePrintClass
         thread.IsBackground = true;
         thread.Start();
         Thread.Sleep(1000);
-        output.WriteLine("主线程结束");
+        WriteLine("主线程结束");
     }
 
     [Fact(DisplayName = "中止一个线程")]
@@ -41,7 +41,7 @@ public class ThreadT : MyBasePrintClass
             while (true)
             {
                 Thread.Sleep(200);
-                output.WriteLine("新线程持续运行中");
+                WriteLine("新线程持续运行中");
             }
         });
         thread.Start();
@@ -56,6 +56,6 @@ public class ThreadT : MyBasePrintClass
         {
         }
 
-        output.WriteLine("主线程结束");
+        WriteLine("主线程结束");
     }
 }
