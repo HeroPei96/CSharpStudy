@@ -6,9 +6,9 @@ namespace 进阶.委托和事件;
 /// 事件不能在类外部 “赋值”和“调用”，但可以 “+/-”
 /// 只能声明为 “成员变量” 存在于类和接口以及结构体中，相当于事件 event 是 private
 /// </summary>
-public class Event : MyBasePrintClass
+public class EventT : MyBasePrintClass
 {
-    public Event(ITestOutputHelper output) : base(output)
+    public EventT(ITestOutputHelper output) : base(output)
     {
     }
 

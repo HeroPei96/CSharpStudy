@@ -1,11 +1,11 @@
-namespace 进阶.数据类型;
+namespace 核心.数据类型.HashTable;
 
 /// <summary>
 /// Dictionary - 本质上是有泛型功能的 HashTable
 /// </summary>
-public class Dictionary : MyBasePrintClass
+public class DictionaryT : MyBasePrintClass
 {
-    public Dictionary(ITestOutputHelper output) : base(output)
+    public DictionaryT(ITestOutputHelper output) : base(output)
     {
     }
 
@@ -18,6 +18,6 @@ public class Dictionary : MyBasePrintClass
         dictionary.Add("key3", "value4");
 
         // 与 HastTable 不同的是，获取一个不存在的键会报错，HashTable 会返回空
-        // string str = dictionary["key4"];
+        Assert.Throws<KeyNotFoundException>(() => dictionary["key4"]);
     }
 }

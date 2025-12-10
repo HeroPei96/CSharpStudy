@@ -2,10 +2,11 @@ namespace 进阶.委托和事件;
 
 /// <summary>
 /// delegate - 匿名函数
+/// 在函数方法体内通过 delegate 声明的一小段方法体就是匿名函数，它需要使用委托来接收和执行
 /// </summary>
-public class DelegateFunc : MyBasePrintClass
+public class DelegateFuncT : MyBasePrintClass
 {
-    public DelegateFunc(ITestOutputHelper output) : base(output)
+    public DelegateFuncT(ITestOutputHelper output) : base(output)
     {
     }
 

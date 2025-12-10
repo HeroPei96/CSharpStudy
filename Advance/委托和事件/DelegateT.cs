@@ -8,9 +8,9 @@ namespace 进阶.委托和事件;
 /// 委托“不能重载”，所以不能同名
 /// 委托可以为空，此时通过运算符 +/- 存储函数时“不会报错”
 /// </summary>
-public class Delegate : MyBasePrintClass
+public class DelegateT : MyBasePrintClass
 {
-    public Delegate(ITestOutputHelper output) : base(output)
+    public DelegateT(ITestOutputHelper output) : base(output)
     {
     }
 

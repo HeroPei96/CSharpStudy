@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace 进阶.数据类型;
+namespace 核心.数据类型;
 
 /// <summary>
 /// Queue - 队列 - 先进先出

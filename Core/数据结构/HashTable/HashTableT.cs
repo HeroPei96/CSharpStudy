@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace 进阶.数据类型;
+namespace 核心.数据类型.HashTable;
 
 /// <summary>
 /// HashTable - 哈希表 - 键值对

@@ -21,13 +21,12 @@ public class Parameter : MyBasePrintClass
     {
         string value = null;
         //调用时必须添加 ref 关键字
-        ChangeRefValue(ref value);
+        MyFunc(ref value);
         output.WriteLine(value);
-    }
-
-    private void ChangeRefValue(ref string value)
-    {
-        value = new string("RefStr");
+        void MyFunc(ref string value)
+        {
+            value = new string("RefStr");
+        }
     }
 
     /// <summary>
@@ -40,19 +39,19 @@ public class Parameter : MyBasePrintClass
     {
         int value;
         //调用时必须添加 out 关键字
-        ChangeOutValue(out value);
+        MyFunc(out value);
         output.WriteLine($"value: {value}");
-        
-        //简便写法，out 修饰的参数可以无需在外部声明
-        ChangeOutValue(out int myValue);
-        output.WriteLine($"myValue: {myValue}");
-    }
 
-    private void ChangeOutValue(out int value)
-    {
-        //out 修饰的参数必须在函数内初始化
-        value = 2;
-        value = value * 2;
+        //简便写法，out 修饰的参数可以无需在外部声明
+        MyFunc(out int myValue);
+        output.WriteLine($"myValue: {myValue}");
+
+        void MyFunc(out int value)
+        {
+            //out 修饰的参数必须在函数内初始化
+            value = 2;
+            value = value * 2;
+        }
     }
 
     /// <summary>
@@ -63,16 +62,16 @@ public class Parameter : MyBasePrintClass
     [Fact(DisplayName = "params 变长参数")]
     public void Test3()
     {
-        ParamsMethod("HeroP", 2, 4, "abc", "123", "qwe");
-    }
+        MyFunc("HeroP", 2, 4, "abc", "123", "qwe");
 
-    private void ParamsMethod(string name, int a, int b, params string[] strs)
-    {
-        output.WriteLine($"我的名字是: {name}");
-        output.WriteLine($"a + b = {a + b}");
-        for (int i = 0; i < strs.Length; i++)
+        void MyFunc(string name, int a, int b, params string[] strs)
         {
-            output.WriteLine($"str{i}: {strs[i]}");
+            output.WriteLine($"我的名字是: {name}");
+            output.WriteLine($"a + b = {a + b}");
+            for (int i = 0; i < strs.Length; i++)
+            {
+                output.WriteLine($"str{i}: {strs[i]}");
+            }
         }
     }
 
@@ -85,12 +84,12 @@ public class Parameter : MyBasePrintClass
     [Fact(DisplayName = "默认值参数")]
     public void Test4()
     {
-        Method4("HeroP");
-    }
+        MyFunc("HeroP");
 
-    //如果默认值参数和普通参数混用，那么“默认值参数一定要在普通参数后面”(如果有变长参数，那么变长参数在最后)
-    private void Method4(string name, string str = "沉默是金")
-    {
-        output.WriteLine(name + str);
+        //如果默认值参数和普通参数混用，那么“默认值参数一定要在普通参数后面”(如果有变长参数，那么变长参数在最后)
+        void MyFunc(string name, string str = "沉默是金")
+        {
+            output.WriteLine(name + str);
+        }
     }
 }

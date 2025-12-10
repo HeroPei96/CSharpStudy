@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace 进阶.数据类型;
+namespace 核心.数据类型.List;
 
 /// <summary>
 /// ArrayList

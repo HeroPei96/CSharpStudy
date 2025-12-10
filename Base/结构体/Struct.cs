@@ -4,6 +4,7 @@ namespace 基础.结构体;
 
 /// <summary>
 /// 结构体
+/// 对于初始化后通常不会改变的数据集，要把它们定义长 Struct 而不是 Class，Struct 方法执行完毕出栈会自动回收内存，无需等待虚拟机 GC
 /// </summary>
 public class Struct : MyBasePrintClass
 {
