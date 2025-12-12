@@ -16,11 +16,11 @@ public class FtpWebRequestT : MyBaseFtpClass
         //设置通信凭证
         NetworkCredential credential = GetCredential();
         ftpWebRequest.Credentials = credential;
-        //请求完毕后关闭控制连接
+        //当完成请求时是否关闭到FTP服务器的控制连接（默认为true，不关闭）
         ftpWebRequest.KeepAlive = false;
         //设置操作命令
         ftpWebRequest.Method = WebRequestMethods.Ftp.UploadFile;
-        //设置为二进制数据传输
+        //是否使用2进制传输（一般情况都是true）
         ftpWebRequest.UseBinary = true;
 
         //获取用于文件上传的流
@@ -31,6 +31,7 @@ public class FtpWebRequestT : MyBaseFtpClass
             fileStream.CopyTo(requestStream);
         }
 
+        //释放所有资源
         requestStream.Close();
         WriteLine("上传完毕");
     }
@@ -46,7 +47,7 @@ public class FtpWebRequestT : MyBaseFtpClass
         ftpWebRequest.Method = WebRequestMethods.Ftp.DownloadFile;
         ftpWebRequest.UseBinary = true;
 
-
+        //只要获取响应就会去发送请求
         FtpWebResponse ftpWebResponse = ftpWebRequest.GetResponse() as FtpWebResponse;
         Stream downLoadStream = ftpWebResponse.GetResponseStream();
         string filePath = GetTestFilePath() + "用于测试下载.txt";
