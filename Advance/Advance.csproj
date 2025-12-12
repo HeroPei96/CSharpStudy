@@ -28,6 +28,7 @@
 
     <ItemGroup>
       <Folder Include="文件操作\测试文件\" />
+      <Folder Include="网络传输\FTP文件传输\测试文件\" />
     </ItemGroup>
 
 </Project>
