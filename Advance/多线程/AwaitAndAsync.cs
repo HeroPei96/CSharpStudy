@@ -16,17 +16,20 @@ public class AwaitAndAsync : MyBasePrintClass
     [Fact(DisplayName = "await & async")]
     public void Test1()
     {
-        output.WriteLine("当前打印主线程ID：{0}", Environment.CurrentManagedThreadId);
-        TestAsync();
+        output.WriteLine("首次打印主线程ID：{0}", Environment.CurrentManagedThreadId);
+        Task task = TestAsync();
+        // 通过 task.Wait() 阻塞
+        // task.Wait();
         output.WriteLine("再次打印主线程ID：{0}", Environment.CurrentManagedThreadId);
         Thread.Sleep(2000);
+        output.WriteLine("最后打印主线程ID：{0}", Environment.CurrentManagedThreadId);
 
-        async void TestAsync()
+        async Task TestAsync()
         {
             //当前还在主线程中执行
             output.WriteLine("打印 async 方法线程ID：{0}", Environment.CurrentManagedThreadId);
-            //检测到 await 关键字后，当前函数会被挂机，继续返回执行 调用处 函数剩下的
-            //会新开一个线程 执行 await 修饰的任务
+            //检测到 await 关键字后，当前函数会被挂机，继续返回执行 调用处(调用async函数的地方) 函数剩下的
+            //await + Task 是固定写法，表示新开一个线程 执行 await 修饰的 Task 任务
             //await 中不能访问 unity 对象
             await Task.Run(() =>
             {
