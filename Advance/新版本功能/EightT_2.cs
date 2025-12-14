@@ -4,6 +4,7 @@ namespace 进阶.新版本功能;
 /// C# 8 新功能
 /// Index: 索引，正序索引和倒序索引
 /// Range: 索引范围
+/// !: 空包容
 /// </summary>
 public partial class EightT
 {
@@ -39,11 +40,11 @@ public partial class EightT
         range = ..3;
         InnerFun();
         WriteMark();
-        
+
         //也可以配合 Index 使用
         range = 1..^2;
         InnerFun();
-        
+
         void InnerFun()
         {
             foreach (int item in arr[range])
@@ -51,5 +52,17 @@ public partial class EightT
                 output.WriteLine($"item: {item}");
             }
         }
+    }
+
+    //没有经过初始化，但能肯定不为空。通过空包容来解除编译器的警告
+    [Fact(DisplayName = "空包容")]
+    public void Test13()
+    {
+        string str = null;
+        Assert.ThrowsAny<NullReferenceException>(() =>
+        {
+            //虽然str为空，但可以使用空包容来解除编译器警告
+            string upperStr = str!.ToUpper();
+        });
     }
 }

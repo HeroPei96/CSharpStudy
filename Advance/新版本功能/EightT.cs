@@ -48,8 +48,8 @@ public partial class EightT : MyBasePrintClass
         //语法: 左边值 ??= 右边值
         //如果左边为 null 才会把右边值赋值给变量
         //如果不为空，则不会有赋值操作
-
         string str = null;
+        //如果 str 为空就执行 str = "4565";
         str ??= "4565";
         output.WriteLine(str);
     }
